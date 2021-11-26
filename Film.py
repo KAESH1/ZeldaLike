@@ -1,22 +1,21 @@
-from moviepy.editor import *
+import cv2
 import pygame
+import constantes
 
-visionage=True
+cap = cv2.VideoCapture('Film.mp4')
+success, img = cap.read()
+shape = img.shape[1::-1]
+wn = pygame.display.set_mode(shape)
+clock = pygame.time.Clock()
 
-film = VideoFileClip('Film.mp4')
-
-while visionage:
-
-    #Skip
-    if touches[pygame.K_ESCAPE]:
-        visionage=False
-    else:
-        film.preview()
-
-	#Quitter Jeu
-    touches=pygame.key.get_pressed()
+while success:
+    clock.tick(30)
+    success, img = cap.read()
     for event in pygame.event.get():
-        if event.type==pygame.QUIT:
-            visionage=False
+        if event.type == pygame.QUIT:
+            success = False
+    if(img is not None):
+        wn.blit(pygame.image.frombuffer(img.tobytes(), shape, "BGR"), (0, 0))
+        pygame.display.update()
 
-pygame.quit()
+fenetre=pygame.display.set_mode((constantes.largeur,constantes.hauteur))

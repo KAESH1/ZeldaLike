@@ -5,18 +5,20 @@ Le Jeu de IBO Mathys, DYLAS William et ARISTIDE-LADAL Tidiane
 
 ------------------PREREQUIS------------------
 
-installer le module "keyboard" avec de lancer le programme
+installer le module "keyboard" ET le module "opencv-python" avec de lancer le programme
 
-Le cas echeant vous ne pourrez pas faire pause.
+Le cas échéant vous ne pourrez pas faire pause.
 
 ------------------COMMANDES------------------
 
-Fleche :diriger le personnage
+Fleche : DIRIGER PERSO
 
-A: attaquer
+A: ATTAQUER
 
 P: PLAY/PAUSE
 
-S: Dialoguer
+S: DIALOGUER / INTERRAGIR
 
-Q: quitter dialogue
+E: INVENTAIRES
+
+Q: QUITTER DIALOGUE
